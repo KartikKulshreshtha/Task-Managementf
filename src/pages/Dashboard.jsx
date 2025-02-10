@@ -68,7 +68,7 @@ const Dashboard = () => {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this task?")) {
       try {
-        await axios.delete(`/api/tasks/${id}`, {
+        await axios.delete(`${serviceUrl}/api/tasks/${id}`, {
           headers: { Authorization: localStorage.getItem("token") },
         });
         fetchTasks();
